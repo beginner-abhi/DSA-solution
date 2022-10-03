@@ -1,4 +1,4 @@
-//BubbleSort.java
+$1$--//BubbleSort.java
 
 package sortingAlgo;
 
@@ -32,3 +32,137 @@ static void swap (int a[],int i,int j) {
 	}
 
 }
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+$2$--   // #Insertion Sort
+package sortingAlgo;
+
+public class InsertionSort {
+	
+	
+	static void InsertionSorting(int a[]) {
+		for(int i=1;i<a.length;i++) {
+			printArray(a);
+			System.out.println();
+			int j=i-1;//j will run left side
+			int temp=a[i];//for shifting because variable not lost
+			
+			
+			for(;j>=0;j--) {
+if(temp<a[j]) //checks element smaller than temporary variable if smaller 
+					{
+					a[j+1]=a[j];//then shift right side
+					}
+					else {
+						
+						break;//if not then break
+					}
+					
+				
+			}a [j+1]=temp;//actual position
+		}
+	}
+	static void printArray(int a[]) {
+		for(int e:a)//return Array 
+			
+		{
+			System.out.print(e+" ");
+		}
+	}
+	public static void main (String []args) {
+		int a[]= {9,5,2,6,3,8,5};
+		 InsertionSorting(a);
+	}
+	
+
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+$3$---->
+package sortingAlgo;
+public class QuickSort {
+	public  static int partition (int a[],int l,int h) {
+		int pivot = a[h];
+		int i=l-1; //use for space for store smmaler ele.than pivot
+		
+		for (int j =l; j<h; j++) {	
+			//store smaller element  in starting arr.
+			if(a[j]<pivot) {
+				i++;
+				//swap
+				int temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+		//swap pivot for store pivot element
+		i++;
+		int temp=a[i];
+		a[i]=pivot;
+		a[h]=temp;
+		return i; //pivot index		
+	}
+	public static void quicksorting(int a[],int l,int h) {
+		if (l<h)//necessary for implementing quick sort 
+			{
+			int pidx=partition(a,l,h); //main work 
+			
+			quicksorting(a,l,pidx-1); //for lower ele.
+			quicksorting(a,pidx+1,h); //for higher ele.
+		}		
+	}
+public static void main(String []args) {
+	int[] a = {6,3,5,2,7,8};//define array
+	int n=a.length;//size of Array
+	quicksorting (a,0,n-1); //call by main fun.
+	
+	//print
+	for(int i=0;i<n;i++) {
+		System.out.println(a[i]+"");
+	}
+	System.out.println();		
+}
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+$4$--->
+package sortingAlgo;
+
+public class SelectionSort {
+	
+	static void SelectionSorting(int a[]){
+		for(int i=0;i<a.length-1;i++) {
+			printArray(a);
+			System.out.println();
+			int min = i;//choose minimum element
+		for (int j=i+1;j<a.length;j++) {
+			if(a[j]<a[min]) {
+				min=j;			}
+		}
+		int temp=a[min];
+		a[min]=a[i];
+		a[i]=temp;	
+		}		
+	}
+	static void printArray(int a[]){
+		for(int e:a) {
+	System.out.print(e+" "); 
+	} }
+	public static void main(String[] args) {
+		int a[]= {9,7,6,2,5,8};
+		SelectionSorting(a);
+		printArray(a);		
+	}
+	
+	}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
