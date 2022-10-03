@@ -1,0 +1,60 @@
+
+package stringBase;
+
+public class StringExa {
+	public static void main (String[] args) {
+		String s1 ="Hello";
+		String s2="Hello";
+		String s3 = new String ("Hello");
+		System.out.println(s1==s2);
+		System.out.println(s1==s3);
+		System.out.println(s1.equals(s3));
+		System.out.println(s1+"  hey"   ); 
+		System.out.println(s1.concat("abhi").replace('e','o')) ; 
+		String s6 = s3.toUpperCase();
+		System.out.println("s6"+s6);
+		
+		String s4= s6.toLowerCase();
+		System.out.println(s4);
+	}
+
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//reverse using stringbuilder
+package stringBase;
+
+public class BuilderAndBuffer {
+	public static void main(String []args) {
+	String a ="abhi";
+	
+	StringBuffer b =new StringBuffer("Hello");
+	StringBuilder c =new StringBuilder("HI");
+	b.append("shek");
+		b.reverse();
+		c.reverse();
+		
+	System.out.println(a);
+	System.out.println(b);
+	System.out.println(c);
+	
+	}
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package stringBase;
+
+public class ReverseWord {
+	public static void main(String [] args) {
+		String s="The Great India";
+		//StringBuilder works by maintaining a buffer of char that will form the final String.
+		//char can be appended,removed & manipulated via the StringBuilder
+		StringBuilder s1=new StringBuilder();
+		s1.append(s);
+		s1.reverse();
+		
+		System.out.println(s1);}
+	}
